@@ -1,11 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   const nav = useNavigate();
 
   return (
+    <>
+    <Helmet>
+      <title>GPA Calculator - Home</title>
+      <meta name="description" content="Calculate your semester and cumulative GPA easily." />
+      <meta name="keywords" content="GPA calculator, semester GPA, cumulative GPA, university grades, Palestinian universities, GPA calculation, grade converter, Adam Alafandi, marks" />
+      <meta property="og:title" content="GPA Calculator" />
+      <meta property="og:description" content="Calculate your semester and cumulative GPA easily." />
+      <meta property="og:image" content="%PUBLIC_URL%/GPA.png" />
+      <meta property="og:url" content="https://gpa-calculator.vercel.app" />
+      <meta name="twitter:card" content="summary_large_image" />
+    </Helmet>
+
     <Wrapper>
       <Glow />
       <HeroCard>
@@ -30,6 +43,7 @@ export default function Home() {
         <Hint>Choose how you want to calculate your GPA</Hint>
       </HeroCard>
     </Wrapper>
+    </>
   );
 }
 

@@ -6,15 +6,19 @@ import "./styles/App.css";
 import Home from "./pages/Home";
 import Cumulativee from "./cumulative";
 import "bootstrap/dist/css/bootstrap.min.css";          // أنظمة Bootstrap
-import "./styles/bootstrap-custom.css";                 // تخصيصنا
+import "./styles/bootstrap-custom.css"; 
+import { HelmetProvider } from "react-helmet-async";                // تخصيصنا
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
-root.render(<BrowserRouter>
+root.render(
+   <HelmetProvider>
+<BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/semester" element={<Semester />} />
       <Route  path="/cumulative" element={<Cumulativee />} />
     </Routes>
   </BrowserRouter>
+  </HelmetProvider>
   );
