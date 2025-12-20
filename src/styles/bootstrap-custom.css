@@ -1,0 +1,48 @@
+/* توجيه عام */
+body {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    z-index: 2000 !important;
+}
+
+.grade-badge {
+    min-width: 60px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
+
+/* خط مشبط بحركة تدرّج لوني دائري */
+.shabah-text {
+    font-family: 'Almarai', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 20px;
+    padding-bottom: 1em;
+    background: linear-gradient(-45deg, #0087fd, #00c6ff, #0a5d8f, #00c6ff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+    filter: drop-shadow(0 0 6px #00c6ff);
+}
+
+/* وهج خفيف يتلألأ */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

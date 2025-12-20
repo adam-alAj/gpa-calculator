@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Semester from "./semester";
+import "./styles/App.css";
+import Home from "./pages/Home";
+import Cumulativee from "./cumulative";
+import "bootstrap/dist/css/bootstrap.min.css";          // أنظمة Bootstrap
+import "./styles/bootstrap-custom.css";                 // تخصيصنا
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/semester" element={<Semester />} />
+      <Route  path="/cumulative" element={<Cumulativee />} />
+    </Routes>
+  </BrowserRouter>
+  );

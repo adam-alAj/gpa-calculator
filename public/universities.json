@@ -1,0 +1,50 @@
+[
+  {
+    "id": "default",
+    "name": "Bethlehem University",
+    "logo": "/logos/beth.jpg",
+    "scale": { "A": 4, "B+": 3.5, "B": 3, "C+": 2.5, "C": 2, "D+": 1.5, "D": 1, "F": 0 }
+  },
+  {
+    "id": "palestineAhliyaUniversity",
+    "name": "Palestine Ahliya University",
+    "logo": "/logos/ahl.png",
+    "scale": { "A": 4, "A-": 3.5, "B+": 3.33, "B": 3, "B-": 2.67, "C+": 2.33, "C": 2, "C-": 1.67, "D+": 1.5, "D": 1, "F": 0 }
+  },
+    {
+        "id": "anNajahNationalUniversity",
+        "name": "An-Najah National University",
+        "logo": "/logos/njh.png",
+        "scale": { "A": 4, "A-": 3.75, "B+": 3.5, "B": 3, "B-": 2.75, "C+": 2.5, "C": 2, "C-": 1.75, "D+": 1.5, "D": 1, "D-": 0.75, "F": 0 }
+    },
+    {
+        "id": "birzeitUniversity",
+        "name": "Birzeit University",
+        "logo": "/logos/ber.png",
+        "scale": { "A+": 4, "A": 4, "AB": 3.5, "B": 3, "C": 2, "F": 0 }
+    },
+    {
+        "id": "alQudsUniversity",
+        "name": "Al-Quds University",
+        "logo": "/logos/qds.png",
+        "scale": { "A": 4, "B": 3, "C": 2, "D": 1, "F": 0 }
+    },
+    {
+        "id": "palestinePolytechnicUniversity",
+        "name": "Palestine Polytechnic University",
+        "logo": "/logos/polyt.png",
+        "scale": { "A": 4, "A-": 3.75, "B+": 3.5, "B": 3, "B-": 2.75, "C+": 2.5, "C": 2, "C-": 1.75, "D+": 1.5, "D": 1, "D-": 0.75, "F": 0 }
+    },
+    {
+        "id": "hebronUniversity",
+        "name": "Hebron University",
+        "logo": "/logos/heb.jpg",
+        "scale": { "A+": 4.0, "A": 3.5, "B+": 3.33, "B": 3.0, "B-": 2.67, "C+": 2.33, "C": 2.0, "C-": 1.67, "D+": 1.5, "D": 1.0, "F": 0.0 }
+    },
+    {
+        "id": "darAlKalimaUniversity",
+        "name": "Dar al-Kalima University",
+        "logo": "/logos/dar.jpg",
+        "scale": { "A": 4.0, "B+": 3.5, "B": 3.0, "C+": 2.5, "C": 2.0, "D+": 1.5, "D": 1.0, "F": 0.0 }
+    }
+]

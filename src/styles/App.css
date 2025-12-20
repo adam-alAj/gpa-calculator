@@ -1,0 +1,8 @@
+.app{text-align:center;padding:20px}
+h1,h2,h3{color:#0a5d8f}
+button{background:#0a5d8f;color:#fff;border:none;padding:8px 18px;margin:8px;border-radius:6px;cursor:pointer}
+button:hover{background:#0872b0}
+.course-row{display:flex;justify-content:center;gap:8px;margin:8px 0}
+input,select{padding:6px;border:1px solid #ccc;border-radius:4px;width:140px}
+.gpa-result{font-size:1.6rem;color:#28a745;margin-top:15px}
+.ad-banner{margin:20px auto}
