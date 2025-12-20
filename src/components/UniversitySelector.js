@@ -51,4 +51,9 @@ const Select = styled(Form.Select)`
 margin-left: 5px;
 border-radius: 10px;
 border: 1px solid #5c5d5eff;
+
+@media (max-width: 768px) {
+  width: 95%;
+  height: 50px;
+}
 `;

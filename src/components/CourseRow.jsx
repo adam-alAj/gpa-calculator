@@ -83,8 +83,13 @@ const Input = styled(Form.Control)`
     background: #fff;
     outline-offset: 5px;
   }
-     @media (max-width: 768px) {
-    margin-left: 0;
+
+  @media (max-width: 768px) {
+    margin-left: 10px;
+    width: 90%;
+    height: 46px;
+    margin-bottom: 5px;
+    
   }
 `;
 
@@ -98,6 +103,12 @@ const GradeSelect = styled(Form.Select)`
 
   &:focus {
     background: #fff;
+  }
+    @media (max-width: 768px) {
+    margin-left: 4px;
+    width: 85%;
+    height: 46px;
+    ;
   }
 `;
 
@@ -113,6 +124,8 @@ const BadgeWrapper = styled.div`
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
+    width: 150px;
+    margin-left: 7px;
   }
 `;
 
@@ -153,4 +166,12 @@ const StyledButton = styled.div`
 
   .delete-button:active .trash-svg {
     transform: scale(0.96) rotate(-1deg);
-  }`;
+  }
+    @media (max-width: 768px) {
+    .delete-button {
+    margin-right: 10px;
+    width: 100%;
+    height: 100%;
+   }
+  }
+  `;

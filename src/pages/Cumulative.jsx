@@ -209,6 +209,10 @@ const UniversityLogo = styled.img`
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   border-radius: 6px;
   border: 1.5px solid #929292ff;
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
 `;
 const StyledWrapper = styled.div`
   display: flex;
@@ -368,10 +372,12 @@ const SemesterRow = styled.div`
   gap: 0.5rem;
 
   input {
-    width: 95%;          /* أصغر من الافتراضي */
+    width: 90%;          /* أصغر من الافتراضي */
+    height: 100%;       /* ارتفاع موحد */
     font-size: 0.85rem;    /* تصغير الخط */
-    padding: 6px 0.75rem;  /* تقليل الحشو */
-    margin-bottom: 5px;      /* إزالة الهامش السفلي */
+    padding: 14px 0.75rem;  /* تقليل الحشو */
+    margin-bottom: 7px;      /* إزالة الهامش السفلي */
+    margin-left: 10px;
   }
  
 `;
@@ -392,6 +398,7 @@ const Input = styled(Form.Control)`
     outline-offset: 5px;
     background-color: #fff;
   }
+    
 `;
 const StyledButton = styled.div`
   .delete-button {

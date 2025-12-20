@@ -155,6 +155,9 @@ const UniversityLogo = styled.img`
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   border-radius: 6px;
   border: 1.5px solid #929292ff;
+   @media (max-width: 768px) {
+    margin-top: 30px;
+  }
 `;
 
 const StyledWrapper = styled.div`
