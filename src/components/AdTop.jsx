@@ -14,7 +14,7 @@ export default function AdTop() {
     <AdWrapper key="top-ad">
       <ins className="adsbygoogle"
           style={{ display: "block" }}
-          data-ad-client="pub-7392710276037924"
+          data-ad-client="ca-pub-7392710276037924"
           data-ad-slot="TOP_SLOT_ID"
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
