@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Cumulativee from "./cumulative";
 import "bootstrap/dist/css/bootstrap.min.css";          // أنظمة Bootstrap
 import "./styles/bootstrap-custom.css"; 
-import { HelmetProvider } from "react-helmet";                // تخصيصنا
+import { HelmetProvider } from "react-helmet-async";                // تخصيصنا
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
