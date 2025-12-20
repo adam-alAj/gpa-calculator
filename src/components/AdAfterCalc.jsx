@@ -26,4 +26,14 @@ const AdWrapper = styled.div`
   width: 100%;
   margin: 1.5rem 0;
   text-align: center;
+
+   @media (max-width: 768px) {
+    margin: 0.75rem 0;
+  }
+
+  ins {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
 `;
