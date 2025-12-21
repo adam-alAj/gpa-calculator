@@ -16,6 +16,7 @@ function ColorSchemesExample() {
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
             <Nav.Link onClick={() => navigate("/semester")}>Semester GPA</Nav.Link>
             <Nav.Link onClick={() => navigate("/cumulative")}>Cumulative GPA</Nav.Link>
+            <Nav.Link onClick={() => navigate("/privacy")}>Privacy Policy</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
