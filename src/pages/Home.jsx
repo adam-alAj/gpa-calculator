@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
     <Helmet>
-      <title>GPA Calculator - Home</title>
+      <title>Pl GPA Calculator</title>
       <meta name="description" content="Calculate your semester and cumulative GPA easily." />
       <meta name="keywords" content="GPA calculator, semester GPA, cumulative GPA, university grades, Palestinian universities, GPA calculation, grade converter, Adam Alafandi, marks" />
       <meta property="og:title" content="GPA Calculator" />
