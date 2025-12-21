@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, Alert, Form } from "react-bootstrap";
 import UniversitySelector from "../components/UniversitySelector";
-import AdTop from "../components/AdTop";
 import AdAfterCalc from "../components/AdAfterCalc";
 
 export default function Cumulative() {
@@ -38,87 +37,122 @@ export default function Cumulative() {
 
   return (
     <PageWrapper>
-      <AdTop />
       <div className="overlay" />
-{univ?.logo && <UniversityLogo src={univ.logo} alt={univ.name} />}
+      {univ?.logo && <UniversityLogo src={univ.logo} alt={univ.name} />}
       <StyledWrapper>
-        <div className="card">
-          <div className="bg">
-            <UniversitySelector onChange={setUniv} />
-            <HeadersRow>
-              <span>Semester Name</span>
-              <span className="h">Credit Hours</span>
-              <span>GPA</span>
-              <span></span> {/* خانة الحذف */}
-            </HeadersRow>
-            {semesters.map((s, i) => (
-              <SemesterRow key={i}>
+        <Layout>
+          <div className="card">
+            <div className="bg">
+              <UniversitySelector onChange={setUniv} />
+              <HeadersRow>
+                <span>Semester Name</span>
+                <span className="h">Credit Hours</span>
+                <span>GPA</span>
+                <span></span> {/* خانة الحذف */}
+              </HeadersRow>
+              {semesters.map((s, i) => (
+                <SemesterRow key={i}>
 
-                <Input
-                  placeholder="Semester name (optional)"
-                  value={s.name}
-                  onChange={(e) => update(i, "name", e.target.value)}
-                />
-
-
-
-                <Input
-                  type="number"
-                  placeholder="Credit Hours"
-                  min="1"
-                  value={s.hours}
-                  onChange={(e) => update(i, "hours", e.target.value)}
-                />
+                  <Input
+                    placeholder="Semester name (optional)"
+                    value={s.name}
+                    onChange={(e) => update(i, "name", e.target.value)}
+                  />
 
 
 
-                <Input
-                  type="number"
-                  step="0.01"
-                  placeholder="GPA"
-                  min="0"
-                  max="4"
-                  value={s.gpa}
-                  onChange={(e) => update(i, "gpa", e.target.value)}
-                />
+                  <Input
+                    type="number"
+                    placeholder="Credit Hours"
+                    min="1"
+                    value={s.hours}
+                    onChange={(e) => update(i, "hours", e.target.value)}
+                  />
 
-                <StyledButton>
-                  <button aria-label="Delete item" className="delete-button" onClick={() => remove(i)}>
-                    <svg className="trash-svg" viewBox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
-                      <g id="trash-can">
-                        <rect x={16} y={24} width={32} height={30} rx={3} ry={3} fill="#e74c3c" />
-                        <g transform-origin="12 18" id="lid-group">
-                          <rect x={12} y={12} width={40} height={6} rx={2} ry={2} fill="#c0392b" />
-                          <rect x={26} y={8} width={12} height={4} rx={2} ry={2} fill="#c0392b" />
+
+
+                  <Input
+                    type="number"
+                    step="0.01"
+                    placeholder="GPA"
+                    min="0"
+                    max="4"
+                    value={s.gpa}
+                    onChange={(e) => update(i, "gpa", e.target.value)}
+                  />
+
+                  <StyledButton>
+                    <button aria-label="Delete item" className="delete-button" onClick={() => remove(i)}>
+                      <svg className="trash-svg" viewBox="0 -10 64 74" xmlns="http://www.w3.org/2000/svg">
+                        <g id="trash-can">
+                          <rect x={16} y={24} width={32} height={30} rx={3} ry={3} fill="#e74c3c" />
+                          <g transform-origin="12 18" id="lid-group">
+                            <rect x={12} y={12} width={40} height={6} rx={2} ry={2} fill="#c0392b" />
+                            <rect x={26} y={8} width={12} height={4} rx={2} ry={2} fill="#c0392b" />
+                          </g>
                         </g>
-                      </g>
-                    </svg>
-                  </button>
-                </StyledButton>
-              </SemesterRow>
-            ))}
+                      </svg>
+                    </button>
+                  </StyledButton>
+                </SemesterRow>
+              ))}
 
-            <div className="d-flex justify-content-center gap-4 mt-4">
-              <CButton variant="outline-success" onClick={addSemester}>
-                Add Semester
-              </CButton>
-              <CButton variant="primary" onClick={calc}>
-                Calculate Cumulative GPA
-              </CButton>
+              <div className="d-flex justify-content-center gap-4 mt-4">
+                <CButton variant="outline-success" onClick={addSemester}>
+                  Add Semester
+                </CButton>
+                <CButton variant="primary" onClick={calc}>
+                  Calculate Cumulative GPA
+                </CButton>
+              </div>
+
+              {cGpa && (
+                <Alert
+                  className={`mt-4 text-center gpa-alert ${cGpa >= 2.5 ? "gpa-good" : "gpa-warning"
+                    }`}
+                >
+                  Your Cumulative GPA is: <strong>{cGpa}</strong>
+                </Alert>
+              )}
+              <AdAfterCalc />
             </div>
-
-            {cGpa && (
-              <Alert
-                className={`mt-4 text-center gpa-alert ${cGpa >= 2.5 ? "gpa-good" : "gpa-warning"
-                  }`}
-              >
-                Your Cumulative GPA is: <strong>{cGpa}</strong>
-              </Alert>
-            )}
-            <AdAfterCalc />
+            <div className="blob" />
           </div>
-          <div className="blob" />
-        </div>
+
+
+
+          {/* ===== Info Card ===== */}
+          <InfoCard>
+            <h2>What is GPA?</h2>
+            <p>
+              GPA (Grade Point Average) is a numerical representation of a student's
+              academic performance, calculated based on the grades earned and credit
+              hours completed.
+            </p>
+
+            <h2>How to calculate Cumulative GPA</h2>
+            <p>
+              Cumulative GPA is calculated by multiplying each semester's GPA by its
+              credit hours, summing the results, then dividing by the total credit
+              hours for all semesters.
+            </p>
+
+            <h2>Explanation of Grades</h2>
+            <p>
+              Grades are typically converted to a 4.0 scale, where A represents
+              excellent performance and lower grades reduce the GPA accordingly.
+            </p>
+
+            <h2>Notes for Palestinian Universities</h2>
+            <p>
+              Most Palestinian universities follow a 4.0 GPA system, but grading
+              scales may vary slightly. Always verify your university’s official
+              grading policy.
+            </p>
+          </InfoCard>
+        </Layout>
+
+
       </StyledWrapper>
     </PageWrapper>
   );
@@ -126,20 +160,7 @@ export default function Cumulative() {
 
 /* ------------------- styled-components (نفس تأثيرات Semester) ------------------- */
 const PageWrapper = styled.div`
- position: relative;
-  min-height: 110vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-  overflow: hidden;
-  background: linear-gradient(135deg, #eaf0ff, #ffffff, #f0f4ff);
-  border-radius: 12px;
-  border: 1.5px solid #6b6969ff;
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(201, 200, 200, 0.8);
+ 
 
   /* طبقة الميش المتحركة */
   &::before {
@@ -197,10 +218,55 @@ const PageWrapper = styled.div`
     100% { transform: translateY(-100px) rotate(-5deg); }
   }
 `;
+const Layout = styled.div`
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const InfoCard = styled.div`
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: #1f2937;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1.4rem;
+  }
+
+  @media (max-width: 768px) {
+   order: 3;
+    max-width: 95%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+`;
+
 const UniversityLogo = styled.img`
   position: absolute;
   top: 0.8rem;        /* بعد بسيط عن أعلى الصفحة */
-  left: 50%;
+  left: 33%;       
+  margin-top: 65px;
   transform: translateX(-50%);
   width: 106px;
   height: 106px;
@@ -211,17 +277,28 @@ const UniversityLogo = styled.img`
   border: 1.5px solid #929292ff;
 
   @media (max-width: 768px) {
-    margin-top: 30px;
+    position: static;        /* ← مهم جداً */
+    transform: none;
+    margin: 6rem auto 1rem auto;
+    order: 1;                /* ← بعد الناف بار مباشرة */
+    display: block;
   }
 `;
 const StyledWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  padding: 2rem 0;
+  padding: 10rem 0;
   direction: ltr; /* إجبار الاتجاه على الإنجليزي */
   
-
+  
+ @media (max-width: 768px) {
+   
+    order: 2;
+    justify-content: center;
+    padding: 2rem 0;
+    width: 100%;
+  }
  
   .card {
     position: relative;
@@ -240,7 +317,11 @@ const StyledWrapper = styled.div`
     box-shadow:
       0 12px 30px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    
+    @media (max-width: 768px) {
+      
+      margin: 0 auto;
+      width: 95%;
+    }
   }
 
  .bg {
@@ -325,10 +406,7 @@ const StyledWrapper = styled.div`
   color: #580101ff;
 }
 
-      @media (max-width: 768px) {
-    font-size: 0.95rem;
-    padding: 14px;
-  }
+    
 `;
 const HeadersRow = styled.div`
   display: grid;

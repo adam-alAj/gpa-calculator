@@ -4,7 +4,6 @@ import { Button, Alert } from "react-bootstrap";
 import UniversitySelector from "./UniversitySelector";
 import CourseRow from "./CourseRow";
 import { useState } from "react";
-import AdTop from "../components/AdTop";
 import AdAfterCalc from "../components/AdAfterCalc";
 
 
@@ -25,45 +24,78 @@ export default function GPACard() {
   };
 
   return (
-    
+
     <PageWrapper>
-    
       <div className="overlay" />
-        <AdTop />
-{univ?.logo && <UniversityLogo src={univ.logo} alt={univ.name} />}
+      {univ?.logo && <UniversityLogo src={univ.logo} alt={univ.name} />}
 
       <StyledWrapper>
-        <div className="card">
-          <div className="bg">
-            {/* هنا نضع المحتوى فوق الطبقة البلورية */}
-            <UniversitySelector onChange={setUniv} />
-            <HeadersRow>
-              <span></span>
-              <span className="h">Credit Hours</span>
-              <span className="g">Grade</span>
-              <span></span> {/* خانة الحذف */}
-              <span></span>
-            </HeadersRow>
-            {courses.map((c, i) => (
-              <CourseRow key={i} idx={i} data={c} scale={univ?.scale} update={update} onDelete={remove} />
-            ))}
+        <Layout>
+          <div className="card">
+            <div className="bg">
+              {/* هنا نضع المحتوى فوق الطبقة البلورية */}
+              <UniversitySelector onChange={setUniv} />
+              <HeadersRow>
+                <span></span>
+                <span className="h">Credit Hours</span>
+                <span className="g">Grade</span>
+                <span></span> {/* خانة الحذف */}
+                <span></span>
+              </HeadersRow>
+              {courses.map((c, i) => (
+                <CourseRow key={i} idx={i} data={c} scale={univ?.scale} update={update} onDelete={remove} />
+              ))}
 
-            <div className="d-flex justify-content-center gap-5 mt-4">
-              <CButton variant="success" onClick={addCourse}>Add Course</CButton>
-              <CButton variant="primary" onClick={calc}>Calculate GPA</CButton>
+              <div className="d-flex justify-content-center gap-5 mt-4">
+                <CButton variant="success" onClick={addCourse}>Add Course</CButton>
+                <CButton variant="primary" onClick={calc}>Calculate GPA</CButton>
+              </div>
+
+              {gpa && (
+                <Alert
+                  className={`mt-4 text-center gpa-alert ${gpa >= 2.5 ? "gpa-good" : "gpa-warning"
+                    }`}
+                >
+                  Your GPA is: <strong>{gpa}</strong>
+                </Alert>
+              )}
+              <AdAfterCalc />
             </div>
-
-            {gpa && (
-              <Alert
-                className={`mt-4 text-center gpa-alert ${gpa >= 2.5 ? "gpa-good" : "gpa-warning"
-                  }`}
-              >
-                Your GPA is: <strong>{gpa}</strong>
-              </Alert>
-            )}
-            <AdAfterCalc />
           </div>
-        </div>
+
+
+          {/* ===== Info Card ===== */}
+          <InfoCard>
+            <h2>What is GPA?</h2>
+            <p>
+              GPA (Grade Point Average) is a numerical representation of a student's
+              academic performance, calculated based on the grades earned and credit
+              hours completed.
+            </p>
+
+            <h2>How to calculate Semester GPA</h2>
+            <p>
+              Semester GPA is calculated by multiplying each course grade by its
+              credit hours, summing the results, then dividing by the total credit
+              hours for that semester.
+            </p>
+
+            <h2>Explanation of Grades</h2>
+            <p>
+              Grades are typically converted to a 4.0 scale, where A represents
+              excellent performance and lower grades reduce the GPA accordingly.
+            </p>
+
+            <h2>Notes for Palestinian Universities</h2>
+            <p>
+              Most Palestinian universities follow a 4.0 GPA system, but grading
+              scales may vary slightly. Always verify your university’s official
+              grading policy.
+            </p>
+          </InfoCard>
+        </Layout>
+
+
       </StyledWrapper>
     </PageWrapper>
   );
@@ -71,20 +103,6 @@ export default function GPACard() {
 
 /* -------------------------- Styled Components -------------------------- */
 const PageWrapper = styled.div`
-  position: relative;
-  min-height: 110vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-  overflow: hidden;
-  background: linear-gradient(135deg, #eaf0ff, #ffffff, #f0f4ff);
-  border-radius: 12px;
-  border: 1.5px solid #6b6969ff;
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(201, 200, 200, 0.8);
 
   /* طبقة الميش المتحركة */
   &::before {
@@ -142,11 +160,56 @@ const PageWrapper = styled.div`
     100% { transform: translateY(-100px) rotate(-5deg); }
   }
 `;
+const Layout = styled.div`
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  justify-content: center;
+
+ @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const InfoCard = styled.div`
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: #1f2937;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1.4rem;
+  }
+
+  @media (max-width: 768px) {
+   order: 3;
+    max-width: 95%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+`;
+
 
 const UniversityLogo = styled.img`
   position: absolute;
   top: 0.8rem;        /* بعد بسيط عن أعلى الصفحة */
-  left: 50%;
+  left: 30%;       
+  margin-top: 65px;
   transform: translateX(-50%);
   width: 106px;
   height: 106px;
@@ -155,19 +218,30 @@ const UniversityLogo = styled.img`
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   border-radius: 6px;
   border: 1.5px solid #929292ff;
-   @media (max-width: 768px) {
-    margin-top: 30px;
+
+ @media (max-width: 768px) {
+    position: static;        /* ← مهم جداً */
+    transform: none;
+    margin: 6rem auto 1rem auto;
+    order: 1;                /* ← بعد الناف بار مباشرة */
+    display: block;
   }
 `;
 
 const StyledWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+ display: flex;
+  justify-content: left;
   align-items: center;
-  padding: 2rem 0;
+  padding: 10rem 0;
   direction: ltr; /* إجبار الاتجاه على الإنجليزي */
   
-
+@media (max-width: 768px) {
+   
+    order: 2;
+    justify-content: center;
+    padding: 2rem 0;
+    width: 100%;
+  }
  
   .card {
     position: relative;
@@ -186,7 +260,11 @@ const StyledWrapper = styled.div`
     box-shadow:
       0 12px 30px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    
+     @media (max-width: 768px) {
+      
+      margin: 0 auto;
+      width: 95%;
+    }
   }
 
  .bg {
