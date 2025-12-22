@@ -9,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";          // أنظمة Bootstrap
 import "./styles/bootstrap-custom.css"; 
 import { HelmetProvider } from "react-helmet-async";                // تخصيصنا
 import Privacy from "./Privacy";
+import About  from "./about";
+import Contactt from "./contact";
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
@@ -20,6 +22,9 @@ root.render(
       <Route path="/semester" element={<Semester />} />
       <Route  path="/cumulative" element={<Cumulativee />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contactt />} />
+      
     </Routes>
   </BrowserRouter>
   </HelmetProvider>

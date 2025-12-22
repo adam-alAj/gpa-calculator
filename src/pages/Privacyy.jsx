@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Privacy() {
   return (
-    <PageWrapper>
+   
       <Card>
         <Title>Privacy Policy</Title>
 
@@ -17,34 +17,23 @@ export default function Privacy() {
           settings.
         </Text>
       </Card>
-    </PageWrapper>
+    
   );
 }
 
 /* ===== Styles ===== */
 
-const PageWrapper = styled.div`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f4f7ff, #eef2ff);
 
-  @media (max-width: 768px) {
-    padding: 1.25rem;
-    align-items: flex-start;
-  }
-`;
 
 const Card = styled.div`
-  max-width: 720px;
-  width: 100%;
-  padding: 2.5rem;
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #c6c7caff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 100px auto 2rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+
 
    @media (max-width: 768px) {
     margin-top: 3rem;
@@ -72,6 +61,7 @@ const Text = styled.p`
   color: #4b5563;
   margin-bottom: 1rem;
   direction: ltr;
+  text-align: left;
    @media (max-width: 768px) {
     font-size: 0.95rem;
     line-height: 1.7;

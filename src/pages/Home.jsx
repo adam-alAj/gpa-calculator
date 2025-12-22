@@ -15,7 +15,7 @@ export default function Home() {
       <meta property="og:title" content="GPA Calculator" />
       <meta property="og:description" content="Calculate your semester and cumulative GPA easily." />
       <meta property="og:image" content="%PUBLIC_URL%/GPA.png" />
-      <meta property="og:url" content="https://gpa-calculator.vercel.app" />
+      <meta property="og:url" content="https://gpa-calculator-puce-zeta.vercel.app" />
       <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
 
