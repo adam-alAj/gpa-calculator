@@ -120,6 +120,7 @@ const Title = styled.h1`
 
   @media (max-width: 600px) {
     font-size: 2.4rem;
+    box-shadow: none;
   }
 `;
 
@@ -129,6 +130,7 @@ const Description = styled.p`
   margin: 0 auto 2.5rem;
   line-height: 1.7;
   opacity: 0.95;
+  direction: ltr;
 
   @media (max-width: 600px) {
     font-size: 1.1rem;

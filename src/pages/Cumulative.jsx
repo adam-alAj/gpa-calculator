@@ -259,6 +259,7 @@ const InfoCard = styled.div`
     max-width: 95%;
     padding: 1.5rem;
     text-align: center;
+    box-shadow: none;
   }
 `;
 
@@ -282,6 +283,7 @@ const UniversityLogo = styled.img`
     margin: 6rem auto 1rem auto;
     order: 1;                /* ← بعد الناف بار مباشرة */
     display: block;
+    box-shadow: none;
   }
 `;
 const StyledWrapper = styled.div`
@@ -318,7 +320,7 @@ const StyledWrapper = styled.div`
       0 12px 30px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
     @media (max-width: 768px) {
-      
+      box-shadow: none;
       margin: 0 auto;
       width: 95%;
     }
@@ -555,6 +557,7 @@ const CButton = styled(Button)`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;
+    box-shadow: none;
   }
 }
 

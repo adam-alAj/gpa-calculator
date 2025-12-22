@@ -29,5 +29,9 @@ const FooterWrapper = styled.footer`
   font-size: 0.9rem;
   color: #6c757d;
   direction: ltr; /* إجبار الاتجاه على الإنجليزي */
+
+  @media (max-width: 768px) {
+  box-shadow: none;
+  }
  
 `;

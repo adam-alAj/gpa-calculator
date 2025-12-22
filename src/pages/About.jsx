@@ -42,7 +42,7 @@ const Page = styled.div`
     margin-top: 3rem;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
   }
   .about-title {
   font-size: 1.6rem;

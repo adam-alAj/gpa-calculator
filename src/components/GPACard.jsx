@@ -261,7 +261,7 @@ const StyledWrapper = styled.div`
       0 12px 30px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
      @media (max-width: 768px) {
-      
+      box-shadow: none;
       margin: 0 auto;
       width: 95%;
     }
@@ -344,6 +344,7 @@ const StyledWrapper = styled.div`
 
   .card {
     width: 95%;
+    box-shadow: none;
   }
 
   .bg {
@@ -354,6 +355,7 @@ const StyledWrapper = styled.div`
   .gpa-warning {
     width: 100%;
     font-size: 0.95rem;
+    box-shadow:none ;
   }
 }
 
@@ -407,6 +409,7 @@ const CButton = styled(Button)`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;
+    box-shadow: none;
   }
 }
 
