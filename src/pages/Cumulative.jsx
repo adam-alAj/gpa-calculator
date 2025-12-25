@@ -114,7 +114,7 @@ export default function Cumulative() {
                   Your Cumulative GPA is: <strong>{cGpa}</strong>
                 </Alert>
               )}
-              <AdAfterCalc />
+              <AdSense slot="9483860855" />
             </div>
             <div className="blob" />
           </div>

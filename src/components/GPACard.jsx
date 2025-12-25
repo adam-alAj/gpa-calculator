@@ -59,7 +59,7 @@ export default function GPACard() {
                   Your GPA is: <strong>{gpa}</strong>
                 </Alert>
               )}
-              <AdAfterCalc />
+              <AdSense slot="9483860855" />
             </div>
           </div>
 
