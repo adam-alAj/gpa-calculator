@@ -43,8 +43,47 @@ export default function Home() {
         <Hint>Choose how you want to calculate your GPA</Hint>
       </HeroCard>
     </Wrapper>
+    <InfoSection>
+        <h2>What is a University GPA?</h2>
+        <p>
+          The Grade Point Average (GPA) is a standard way of measuring academic
+          achievement in universities. It represents the average value of the grades
+          earned across all completed courses, weighted by credit hours.
+        </p>
+
+        <h2>How GPA is Calculated</h2>
+        <p>
+          GPA is calculated by multiplying the grade points of each course by its
+          credit hours, summing all results, and dividing by the total number of credit
+          hours. This method ensures that courses with more weight have a greater
+          impact on the final GPA.
+        </p>
+
+        <h2>Cumulative vs Semester GPA</h2>
+        <p>
+          Semester GPA reflects performance during a single academic term, while
+          cumulative GPA includes all semesters completed so far. Both are important
+          indicators used for academic standing, scholarships, and graduation
+          eligibility.
+        </p>
+
+        <h2>Palestinian University Grading Systems</h2>
+        <p>
+          Most Palestinian universities use a 4.0 grading scale, although grading
+          policies may vary slightly between institutions. Students are always advised
+          to consult their official university academic regulations.
+        </p>
+
+        <h2>Why Use This GPA Calculator?</h2>
+        <p>
+          This tool is designed to help students accurately calculate their GPA without
+          confusion. It reduces errors, saves time, and provides quick results in a
+          clean and user-friendly interface optimized for all devices.
+        </p>
+      </InfoSection>
     </>
   );
+  
 }
 
 /* ================== styled-components ================== */
@@ -177,4 +216,26 @@ const Hint = styled.div`
   margin-top: 1.6rem;
   font-size: 0.9rem;
   opacity: 0.8;
+`;
+const InfoSection = styled.section`
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.8;
+  color: #333; // لون النص ليكون مقروءاً على الخلفية البيضاء
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  direction: ltr;
+  
+  h2 {
+    color: #0a4f7a;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
 `;

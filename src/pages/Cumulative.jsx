@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, Alert, Form } from "react-bootstrap";
 import UniversitySelector from "../components/UniversitySelector";
-import AdAfterCalc from "../components/AdAfterCalc";
+
 
 export default function Cumulative() {
   const [semesters, setSemesters] = useState([

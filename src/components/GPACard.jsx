@@ -4,7 +4,7 @@ import { Button, Alert } from "react-bootstrap";
 import UniversitySelector from "./UniversitySelector";
 import CourseRow from "./CourseRow";
 import { useState } from "react";
-import AdAfterCalc from "../components/AdAfterCalc";
+
 
 
 export default function GPACard() {
