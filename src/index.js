@@ -11,6 +11,7 @@ import { HelmetProvider } from "react-helmet-async";                // تخصي�
 import Privacy from "./Privacy";
 import About  from "./about";
 import Contactt from "./contact";
+import FAQPage from "./FAQ";
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
@@ -24,6 +25,7 @@ root.render(
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contactt />} />
+      <Route path="/faq" element={<FAQPage />} />
       
     </Routes>
   </BrowserRouter>

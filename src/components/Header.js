@@ -46,6 +46,7 @@ export default function Header() {
            <Nav.Link className="sidebar-link" onClick={() => { navigate("/"); handleClose(); }}>Home</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/semester"); handleClose(); }}>Semester GPA</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/cumulative"); handleClose(); }}>Cumulative GPA</Nav.Link>
+      <Nav.Link className="sidebar-link" onClick={() => { navigate("/faq"); handleClose(); }}>FAQ</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/privacy"); handleClose(); }}>Privacy Policy</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/contact"); handleClose(); }}>Contact Us</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/about"); handleClose(); }}>About Us</Nav.Link>
