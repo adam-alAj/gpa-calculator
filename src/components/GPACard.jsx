@@ -284,8 +284,8 @@ const StyledWrapper = styled.div`
     gap: 2.5em;
   }
     .gpa-good {
-    width:40em ;
-    margin: 0 auto;
+    width:35em ;
+    margin: auto auto 0 auto;
   background: linear-gradient(145deg, #cfeff6ff, #adf7dbff);
   border: 1px solid #1c5246ff;
   border-radius: 14px;
@@ -312,8 +312,8 @@ const StyledWrapper = styled.div`
 }
 
 .gpa-warning {
-    width:40em ;
-    margin: 0 auto;
+   width:35em ;
+    margin: auto auto 0 auto;
   background: linear-gradient(135deg, #fededeff, #fedadaff);
   border: 1px solid #630200ff;
   border-radius: 14px;
