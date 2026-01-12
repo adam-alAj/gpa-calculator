@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Semester from "./semester";
 import "./styles/App.css";
-import Home from "./pages/Home";
+import Homee from "./home";
 import Cumulativee from "./cumulative";
 import "bootstrap/dist/css/bootstrap.min.css";          // أنظمة Bootstrap
 import "./styles/bootstrap-custom.css"; 
@@ -19,7 +19,7 @@ root.render(
    <HelmetProvider>
 <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Homee />} />
       <Route path="/semester" element={<Semester />} />
       <Route  path="/cumulative" element={<Cumulativee />} />
       <Route path="/privacy" element={<Privacy />} />

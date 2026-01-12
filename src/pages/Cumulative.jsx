@@ -118,38 +118,6 @@ export default function Cumulative() {
             </div>
             <div className="blob" />
           </div>
-
-
-
-          {/* ===== Info Card ===== */}
-          <InfoCard>
-            <h2>What is GPA?</h2>
-            <p>
-              GPA (Grade Point Average) is a numerical representation of a student's
-              academic performance, calculated based on the grades earned and credit
-              hours completed.
-            </p>
-
-            <h2>How to calculate Cumulative GPA</h2>
-            <p>
-              Cumulative GPA is calculated by multiplying each semester's GPA by its
-              credit hours, summing the results, then dividing by the total credit
-              hours for all semesters.
-            </p>
-
-            <h2>Explanation of Grades</h2>
-            <p>
-              Grades are typically converted to a 4.0 scale, where A represents
-              excellent performance and lower grades reduce the GPA accordingly.
-            </p>
-
-            <h2>Notes for Palestinian Universities</h2>
-            <p>
-              Most Palestinian universities follow a 4.0 GPA system, but grading
-              scales may vary slightly. Always verify your university’s official
-              grading policy.
-            </p>
-          </InfoCard>
         </Layout>
 
 
@@ -230,43 +198,11 @@ const Layout = styled.div`
   }
 `;
 
-const InfoCard = styled.div`
-  width: 100%;
-  max-width: 420px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(18px);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-
-  h2 {
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
-    color: #1f2937;
-  }
-
-  p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #4b5563;
-    margin-bottom: 1.4rem;
-  }
-
-  @media (max-width: 768px) {
-   order: 3;
-    max-width: 95%;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: none;
-  }
-`;
-
 const UniversityLogo = styled.img`
   position: absolute;
   top: 0.8rem;        /* بعد بسيط عن أعلى الصفحة */
-  left: 33%;       
+  left: 50%;  
+  right: auto;     
   margin-top: 65px;
   transform: translateX(-50%);
   width: 106px;
@@ -288,7 +224,7 @@ const UniversityLogo = styled.img`
 `;
 const StyledWrapper = styled.div`
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   padding: 10rem 0;
   direction: ltr; /* إجبار الاتجاه على الإنجليزي */
