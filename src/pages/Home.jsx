@@ -90,6 +90,7 @@ export default function Home() {
 
 const Wrapper = styled.div`
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(
     135deg,
     #007adf,
@@ -104,7 +105,22 @@ const Wrapper = styled.div`
   justify-content: center;
   color: #fff;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden; /* لمنع أي تمرير جانبي في الجوال */
+
+  /* --- الميديا كويري للجوال --- */
+  @media (max-width: 768px) {
+    /* تغيير الاتجاه ليصبح المحتوى فوق بعضه */
+    flex-direction: column; 
+    
+    /* جعل المحتوى يبدأ من الأعلى قليلاً بدلاً من المنتصف تماماً */
+    justify-content: flex-start;
+    
+    /* إضافة مساحة داخلية (Padding) لكي لا يلتصق المحتوى بحواف الشاشة */
+    padding: 15px 10px;
+    
+    /* تحسين سرعة الأنيميشن في الجوال لتوفير البطارية (اختياري) */
+    animation: gradientMove 15s ease infinite;
+  }
 
   @keyframes gradientMove {
     0% { background-position: 0% 50%; }

@@ -27,6 +27,7 @@ export default function Header() {
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
             <Nav.Link onClick={() => navigate("/semester")}>Semester GPA</Nav.Link>
             <Nav.Link onClick={() => navigate("/cumulative")}>Cumulative GPA</Nav.Link>
+            <Nav.Link onClick={() => navigate("/howtouse")}>How To Use</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -46,6 +47,7 @@ export default function Header() {
            <Nav.Link className="sidebar-link" onClick={() => { navigate("/"); handleClose(); }}>Home</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/semester"); handleClose(); }}>Semester GPA</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/cumulative"); handleClose(); }}>Cumulative GPA</Nav.Link>
+      <Nav.Link className="sidebar-link" onClick={() => { navigate("/howtouse"); handleClose(); }}>How To Use</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/faq"); handleClose(); }}>FAQ</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/privacy"); handleClose(); }}>Privacy Policy</Nav.Link>
       <Nav.Link className="sidebar-link" onClick={() => { navigate("/contact"); handleClose(); }}>Contact Us</Nav.Link>

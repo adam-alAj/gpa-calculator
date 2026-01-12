@@ -1,4 +1,8 @@
 /* توجيه عام */
+* {
+  box-sizing: border-box; /* يضمن أن الـ Padding لا يزيد من عرض العنصر */
+} 
+
 body {
     font-family: "Cairo", sans-serif;
     direction: rtl;

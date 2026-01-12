@@ -12,6 +12,7 @@ import Privacy from "./Privacy";
 import About  from "./about";
 import Contactt from "./contact";
 import FAQPage from "./FAQ";
+import HowToUsee from "./HTU";
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
@@ -26,6 +27,7 @@ root.render(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contactt />} />
       <Route path="/faq" element={<FAQPage />} />
+      <Route path="/howtouse" element={<HowToUsee />} />
       
     </Routes>
   </BrowserRouter>
